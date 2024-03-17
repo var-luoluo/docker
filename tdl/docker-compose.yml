@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  my-tdl:
+    image: varname/var-tdl:latest
+    container_name: my-tdl
+    environment:
+      TDL_PROXY: http://host.docker.internal:7890 # optional
+    volumes:
+      - ./data:/data
+    command: /bin/bash
+    stdin_open: true
+    tty: true
