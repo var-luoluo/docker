@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  forward-bot:
+    image: varname/forward-bot:v1
+    container_name: bot_1
+    environment:
+      BOT_TOKEN: your_bot_token
