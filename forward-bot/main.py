@@ -4,9 +4,9 @@ import telebot
 import logging
 
 BOT_TOKEN = os.environ.get('BOT_TOKEN') # export BOT_TOKEN='your_bot_token_from_@botfather'
+from_chat = os.environ.get('FROM_CHAT') # chat_id, which chat to copy
+to_chat = os.environ.get('TO_CHAT') # chat_id, copy to which chat
 DELAY_TIME = 3 # after each copy delay 2s
-from_chat = 0 # chat_id, which chat to copy
-to_chat = 0 # chat_id, copy to which chat
 whitelist = [] # user_id, who can use the bot
 stop_task_flag = False
 record = 0

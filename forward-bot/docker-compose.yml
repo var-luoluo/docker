@@ -6,3 +6,5 @@ services:
     container_name: bot_1
     environment:
       BOT_TOKEN: your_bot_token
+      FROM_CHAT: from_chat_id
+      TO_CHAT:   to_chat_id
