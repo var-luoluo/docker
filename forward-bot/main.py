@@ -4,8 +4,9 @@ import telebot
 import logging
 
 BOT_TOKEN = os.environ.get('BOT_TOKEN') # export BOT_TOKEN='your_bot_token_from_@botfather'
-from_chat = os.environ.get('FROM_CHAT') # chat_id, which chat to copy
-to_chat = os.environ.get('TO_CHAT') # chat_id, copy to which chat
+from_chat = int(os.environ.get('FROM_CHAT')) # chat_id, which chat to copy
+to_chat = int(os.environ.get('TO_CHAT')) # chat_id, copy to which chat
+user_id = int(os.environ.get('USER_ID'))
 DELAY_TIME = 3 # after each copy delay 2s
 whitelist = [] # user_id, who can use the bot
 stop_task_flag = False
@@ -15,6 +16,10 @@ bot = telebot.TeleBot(BOT_TOKEN)
 
 logging.basicConfig(filename='run.log', level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+# Init, now only support one user.
+whitelist.append(user_id)
 
 # Avoid abused
 @bot.message_handler(func=lambda message: message.from_user.id not in whitelist)

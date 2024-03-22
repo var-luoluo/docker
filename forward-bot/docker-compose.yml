@@ -2,9 +2,10 @@ version: "3"
 
 services:
   forward-bot:
-    image: varname/forward-bot:v1
-    container_name: bot_1
+    image: varname/forward-bot:v2
+    container_name: forward-bot
     environment:
-      BOT_TOKEN: your_bot_token
-      FROM_CHAT: from_chat_id
-      TO_CHAT:   to_chat_id
+      BOT_TOKEN: # your_bot_token
+      FROM_CHAT: # from_chat_id
+      TO_CHAT:   # to_chat_id
+      USER_ID:   # user_id
