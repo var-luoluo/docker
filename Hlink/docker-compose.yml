@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  docker:
+    image: likun7981/hlink:latest # docker镜像名称
+    restart: on-failure
+    ports: # 这个端口映射
+      - 9090:9090
+    volumes: # 这个表示存储空间映射
+      - /Volumes/Emby:/data
+    environment:
+    #  - PUID=$YOUR_USER_ID
+    #  - PGID=$YOUR_GROUP_ID
+    #  - UMASK=$YOUR_UMASK
+      - HLINK_HOME=/Volumes/Emby/PT # 这个是环境变量
