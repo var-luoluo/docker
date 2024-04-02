@@ -1,1 +1,3 @@
 # docker
+
+I think i should manage them in a better way ...
